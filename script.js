@@ -1,28 +1,20 @@
-const form = document.getElementById('contactForm');
-const response = document.getElementById('responseMessage');
+body {
+  background: linear-gradient(135deg, #e8f0ff, #f4f8ff);
+  font-family: "Poppins", sans-serif;
+}
 
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+h3 {
+  font-weight: 600;
+}
 
-  if (name === '' || email === '' || message === '') {
-    response.className = 'alert alert-danger mt-4';
-    response.textContent = 'Molimo popunite sva polja.';
-    response.classList.remove('d-none');
-    return;
-  }
+form {
+  transition: 0.3s ease;
+}
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    response.className = 'alert alert-warning mt-4';
-    response.textContent = 'Unesite ispravnu email adresu.';
-    response.classList.remove('d-none');
-    return;
-  }
+form:hover {
+  transform: scale(1.02);
+}
 
-  response.className = 'alert alert-success mt-4';
-  response.textContent = `Hvala, ${name}! Tvoja poruka je uspješno poslana.`;
-  response.classList.remove('d-none');
-  form.reset();
-});
+#results {
+  transition: opacity 0.5s ease;
+}
